@@ -1,4 +1,4 @@
-console.log("Hello, World!")
+console.log("Get ready for Rock, Paper, Scissor! You have 5 rounds to play! Good luck!")
 
 // Get computer choice
 
@@ -38,9 +38,7 @@ function playGame() {
 
     let computerScore = 0;
     let humanScore = 0;
-    console.log("The computer's score is " + computerScore + ".")
-    console.log("Your score is " + humanScore + ".")
-
+    
     // play a Round Function
 
     function playRound(humanChoice, computerChoice) {
@@ -54,23 +52,23 @@ function playGame() {
             }
             else if (lowerhuman == "rock" && lowercomputer == "scissor") {
                 console.log("Human wins a point!")
-                return humanScore ++
+                humanScore ++
             }
             else if (lowerhuman == "paper" && lowercomputer == "rock") {
                 console.log("Human wins a point!")
-                return humanScore ++
+                humanScore ++
             }
             else if (lowerhuman == "scissor" && lowercomputer == "paper") {
                 console.log("Human wins a point!")
-                return humanScore ++
+                humanScore ++
             }
             else {
                 console.log("Computer wins a point!")
-                return computerScore ++
+                computerScore ++
             }
-        
-        console.log(computerScore)
-        console.log(humanScore)    
+
+        console.log("The computer's score is " + computerScore + ".")
+        console.log("Your score is " + humanScore + ".") 
     };
 
 // play 5 rounds 
@@ -112,8 +110,5 @@ function playGame() {
         }
 
 }
-
-
-
 
 playGame()
