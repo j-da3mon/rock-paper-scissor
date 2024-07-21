@@ -12,18 +12,23 @@ body {
     padding: 10px;
     margin: 10px;
     gap: 20px;
-    height: 100vw;
+    /* height: 100vw; */
 }
 
 .game-header {
     text-align: center;
 }
 
+h1, h2, h3 {
+    margin: 5px auto;
+}
+
 .container .gameimg-container {
     display: flex;
-    gap: 20px;
-    margin: 10px;
-    padding: 10px;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px;
+    padding: 15px;
 }
 
 button, 
@@ -41,6 +46,17 @@ button,
     background-color: rgb(112, 90, 90);
 }
 
+.scores {
+    display: flex;
+    align-items: end;
+    gap: 20px;
+}
+
+.scores .u-score, .c-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .gameimg {
     width: 250px;

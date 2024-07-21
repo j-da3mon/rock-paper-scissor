@@ -20,37 +20,57 @@ function getComputerChoice() {
         }
 }
 
+let userCounter = document.querySelector(".user-counter");
+let compCounter = document.querySelector(".comp-counter");
+let userCount = 0;
+let compCount = 0;
+let choiceAnnounce = document.querySelector(".choice-announce");
+let winnerAnnounce = document.querySelector(".winner-announce");
+
 // function for round of play logic
 
 function playRound(humanChoice, computerChoice) {
     lowerhuman = humanChoice.toLowerCase()
     lowercomputer = computerChoice.toLowerCase()
 
-    console.log("The computer chose " + lowercomputer + " and you chose " + lowerhuman + ".")
+    choiceAnnounce.innerHTML = ("The computer chose " + lowercomputer + " and you chose " + lowerhuman + ".")
 
     if (lowerhuman == lowercomputer) {
-        console.log("Tie. Please choose again!")
+        winnerAnnounce.innerHTML = ("Tie. Please choose again!")
         }
         else if (lowerhuman == "rock" && lowercomputer == "scissor") {
-            console.log("Human wins a point!")
-            humanScore ++
+            winnerAnnounce.innerHTML = ("Human wins a point!")
+            userCount ++;
+            userCounter.innerHTML = userCount;
         }
         else if (lowerhuman == "paper" && lowercomputer == "rock") {
-            console.log("Human wins a point!")
-            humanScore ++
+            winnerAnnounce.innerHTML = ("Human wins a point!")
+            userCount ++;
+            userCounter.innerHTML = userCount;
         }
         else if (lowerhuman == "scissor" && lowercomputer == "paper") {
-            console.log("Human wins a point!")
-            humanScore ++
+            winnerAnnounce.innerHTML = ("Human wins a point!")
+            userCount ++;
+            userCounter.innerHTML = userCount;
         }
         else {
-            console.log("Computer wins a point!")
-            computerScore ++
+            winnerAnnounce.innerHTML = ("Computer wins a point!")
+            compCount ++;
+            compCounter.innerHTML = compCount;
         }
+
+    if (userCount == 5) {
+        winnerAnnounce.innerHTML = ("Human wins!! Great Game!")
+    }
+    if (compCount == 5) {
+        winnerAnnounce.innerHTML = ("Computer wins!! Great Game!")
+    }
 
     console.log("The computer's score is " + computerScore + ".")
     console.log("Your score is " + humanScore + ".") 
 };
+
+// Click to play a round using the playRound function logic
 
 const rockButton = document.querySelector("#rock");
 rockButton.addEventListener("click", () => {
@@ -71,25 +91,4 @@ scissorButton.addEventListener("click", () => {
     playRound(humanChoice, compChoice)
 })
 
-function playGame() {
-
-    // set scores to 0
-
-
-
-
-//return final score and announce winner    
-
-    console.log("The final score is Computer: " + computerScore + ", Human: " + humanScore + ".")
-
-    if (computerScore > humanScore) {
-        console.log("Computer wins! Good luck next time!")
-        }
-        else if (computerScore < humanScore) {
-            console.log("Human wins! You have a real talent for this!")
-        }
-        else {
-            console.log("It looks like this round ended in a draw. Good luck next time!")
-        }
-
-}
+// set scores to 0
